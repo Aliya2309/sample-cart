@@ -28,6 +28,7 @@ let products = [
 let productsDom = document.querySelector(".products"); 
 let cartDom=document.querySelector(".cart-body");
 let cartfootDom=document.querySelector(".cart-foot");
+let totalDom=document.querySelector(".total");
 let cartTotal=0;
 
 
@@ -110,6 +111,10 @@ function updateCart(wght, amt, fruit){
             let footer=cartfootDom.getElementsByTagName("th")[1];
             console.log(footer);
             footer.innerHTML=cartTotal;
+            let tax=totalDom.querySelector("#tax");
+            tax.innerHTML=(cartTotal*0.2);
+            let gdtotal=totalDom.querySelector("#grand-total");
+            gdtotal.innerHTML=cartTotal+(cartTotal*0.2);
         }
         
     }
